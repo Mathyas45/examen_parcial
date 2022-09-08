@@ -16,32 +16,51 @@
 
         <div class="container col-md-8">
             <h3>Crear Tarea</h3>
+            
             {% csrf_token %}
+            
+            <br>
+            <div class="form-group col-md-5">
+                <label>descripcion</label>
+                <input class="form-control" type="text" name="descripcion">
+                <br>
+            </div>
                 <div class="form-group col-md-3">
-                    <label>Fecha</label>
+                    <label>Fecha creacion</label>
                     <input type="date" class="form-control" name="fechaPichanga">
                 </div>
+                <br>
+                <div class="form-group col-md-3">
+                    <label>Fecha entrega</label>
+                    <input type="date" class="form-control" name="fechaPichanga">
+                </div>
+
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Equipo local</label>
-                        <select class="form-select" name="equipoLocal">
-                            {% for equipo in equipos_registrados %}
-                            <option value="{{ equipo.id }}">{{ equipo.nombre }}</option>
-                            {% endfor %}
+                        <label>Usuario:</label>
+                        
+                        <br>
+                        <br>
+                        <h4>Usuario N°01</h4>
+                     
+                      
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label>Equipo visitante</label>
-                        <select class="form-select" name="equipoVisita">
-                            {% for equipo in equipos_registrados %}
-                            <option value="{{ equipo.id }}">{{ equipo.nombre }}</option>
-                            {% endfor %}
+                        <label>Estado</label>
+                        <br>
+                        <br>
+                        <h4>Activo - incativo - completado</h4>
+                        
+                         
                         </select>
                     </div>
                 </div>
                 <br>
                 <br>
-                <div class="col-md-3">
+                <div class="col-md-4" style="text-align: center;">
                     <button type="submit" class="btn btn-success">Crear</button>
                 </div>
             </form>
