@@ -8,7 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container col-md-7">
+        <div class="container col-md-8">
             <br>
             <br>
             <br>
@@ -18,28 +18,41 @@
             <div class="float-end">
             </div>
             <br>
-            <br>
-            <br>
+            
             <table class="table">
                 <thead>
                     <th>Id</th>
                     <th>Fecha</th>
                     <th>Nombre</th>
                     <th>Estado</th>
+                    <th>Ver</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
 
                 </thead>
                 <tbody>
-                    {% for pichanga in objPichanga %}
                     <tr>
-                        <td>{{ pichanga.id }}</td>
-                        <td>{{ pichanga.fecha }}</td>
-                        <td>{{ pichanga.equipo_local }}</td>
-                        <td>{{ pichanga.equipo_visita }}</td>
-                        <td>{{ pichanga.marcador_local }} - {{ pichanga.marcador_visita }}</td>
-                        <td>{{ pichanga.estadoPichanga }}</td>
-                        <td><a class="btn btn-warning" href="{% url 'pichangasApp:editarPichanga' pichanga.id %}">E</a></td>
+                        <td>1114</td>
+                        <td>17/10/2000</td>
+                        <td>Comer</td>
+                        <td>Progeso</td>
+                        
+                        
+
+                        <td><a class="btn btn-info" href="{% url 'gestionTareas:detalle' %}">v</a></td>
+                        <td><a class="btn btn-warning" href="{% url 'gestionTareas:edicion' %}">E</a></td>
+                        <td><a class="btn btn-danger" >B</a></td>
+
                     </tr>
-                    {% endfor %}
+                      <tr>
+                    <td>1112</td>
+                    <td>15/11/2010</td>
+                    <td>jugar</td>
+                    <td>Pendiente</td>
+                    <td><a class="btn btn-info" href="{% url 'gestionTareas:detalle' %}">v</a></td>
+                        <td><a class="btn btn-warning" href="{% url 'gestionTareas:edicion' %}">E</a></td>
+                        <td><a class="btn btn-danger" >B</a></td>
+                </tr>
                 </tbody>
             </table>
         </div>
